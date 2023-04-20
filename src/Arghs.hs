@@ -34,7 +34,7 @@ getAllArgs = do
 printArg :: Int -> (Int, String) -> IO ()
 printArg width (i, arg) = printf "%*d: `%s`\n" width i arg
 
--- | @'lenToWidth' len@ computes the width needed to print indices to @len@ arguments.
+-- | @'lenToWidth' len@ computes the width needed to print indices for @len@ arguments.
 lenToWidth :: Int -> Int
 lenToWidth len
   | len <= 10 = 1
