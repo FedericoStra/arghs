@@ -12,16 +12,14 @@
 -- A simple program to list the arguments passed on the command line.
 module Arghs (getAllArgs, printArg, lenToWidth) where
 
+import Control.Applicative (liftA2)
 import System.Environment (getArgs, getProgName)
 import Text.Printf (printf)
 
 -- | Computation 'getAllArgs' returns a list of the program's command
 -- line arguments, including the program name.
 getAllArgs :: IO [String]
-getAllArgs = do
-  progName <- getProgName
-  args <- getArgs
-  return $ progName : args
+getAllArgs = liftA2 (:) getProgName getArgs
 
 -- |
 -- Computation @'printArg' width (i, arg)@ prints a single command line argument.
