@@ -14,7 +14,7 @@ name:               arghs
 -- PVP summary:     +-+------- breaking API changes
 --                  | | +----- non-breaking API additions
 --                  | | | +--- code changes with no API change
-version:            0.1.0.1
+version:            0.2.0.0
 
 -- A short (one-line) description of the package.
 synopsis:
@@ -51,7 +51,26 @@ category:
     Shell
 
 -- Extra files to be distributed with the package, such as examples or a README.
-extra-source-files: CHANGELOG.md
+extra-source-files: CHANGELOG.md README.md
+
+library
+    -- Modules exported by the library.
+    exposed-modules:  Arghs
+
+    -- Modules included in this library but not exported.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+
+    -- Other library packages from which modules are imported.
+    build-depends:    base ^>=4.16.4.0
+
+    -- Directories containing source files.
+    hs-source-dirs:   src
+
+    -- Base language which the package is written in.
+    default-language: Haskell2010
 
 executable arghs
     -- .hs or .lhs file containing the Main module.
@@ -64,7 +83,9 @@ executable arghs
     -- other-extensions:
 
     -- Other library packages from which modules are imported.
-    build-depends:    base ^>=4.16.4.0
+    build-depends:
+        base ^>=4.16.4.0,
+        arghs
 
     -- Directories containing source files.
     hs-source-dirs:   app
