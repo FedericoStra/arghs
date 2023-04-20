@@ -84,7 +84,7 @@ executable arghs
 
     -- Other library packages from which modules are imported.
     build-depends:
-        base ^>=4.16.4.0,
+        base,
         arghs
 
     -- Directories containing source files.
