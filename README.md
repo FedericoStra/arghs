@@ -24,8 +24,8 @@ This can be useful to verify commands generated with [`find`]/[`fd`] before exec
 for example
 
 ```
-$ fd -e hs -X args ormolu -i
-0: `args`
+$ fd -e hs -X arghs ormolu -i
+0: `arghs`
 1: `ormolu`
 2: `-i`
 3: `./app/Main.hs`
