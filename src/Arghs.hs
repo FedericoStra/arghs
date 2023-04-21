@@ -1,4 +1,4 @@
-{-# LANGUAGE Safe #-}
+{-# LANGUAGE OverloadedStrings #-}
 
 -- |
 -- Module      :  Arghs
@@ -13,8 +13,8 @@
 module Arghs (getAllArgs, printArg, lenToWidth) where
 
 import Control.Applicative (liftA2)
+import Formatting (fprintLn, left, string, (%))
 import System.Environment (getArgs, getProgName)
-import Text.Printf (printf)
 
 -- | Computation 'getAllArgs' returns a list of the program's command
 -- line arguments, including the program name.
@@ -30,7 +30,7 @@ getAllArgs = liftA2 (:) getProgName getArgs
 -- >>> printArg 3 (8, "hello")
 --   8: `hello`
 printArg :: Int -> (Int, String) -> IO ()
-printArg width (i, arg) = printf "%*d: `%s`\n" width i arg
+printArg width (i, arg) = fprintLn (left width ' ' % ": `" % string % "`") i arg
 
 -- | @'lenToWidth' len@ computes the width needed to print indices for @len@ arguments.
 lenToWidth :: Int -> Int
