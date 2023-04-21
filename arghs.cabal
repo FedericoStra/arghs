@@ -25,7 +25,7 @@ description:
     A simple program to list the arguments passed on the command line.
 
 -- URL for the project homepage or repository.
-homepage:
+homepage: https://github.com/FedericoStra/arghs
 
 -- A URL where users can report bugs.
 -- bug-reports:
@@ -52,6 +52,11 @@ category:
 
 -- Extra files to be distributed with the package, such as examples or a README.
 extra-source-files: CHANGELOG.md README.md
+
+source-repository head
+  type:     git
+  location: https://github.com/FedericoStra/arghs
+  branch:   master
 
 library
     -- Modules exported by the library.
