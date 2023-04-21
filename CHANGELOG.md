@@ -1,5 +1,9 @@
 # Revision history for arghs
 
+## Unreleased
+
+* Use `formatting` instead of `printf`.
+
 ## 0.2.0.1 -- 2023-04-21
 
 * Improved README.
