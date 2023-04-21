@@ -2,6 +2,8 @@
 
 A simple program to list the arguments passed on the command line.
 
+This is a port of the original [args](https://github.com/FedericoStra/args) to Haskell.
+
 ## Demo
 
 ```
