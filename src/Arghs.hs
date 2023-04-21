@@ -34,11 +34,10 @@ printArg width (i, arg) = printf "%*d: `%s`\n" width i arg
 
 -- | @'lenToWidth' len@ computes the width needed to print indices for @len@ arguments.
 lenToWidth :: Int -> Int
-lenToWidth len
-  | len <= 10 = 1
-  | len <= 100 = 2
-  | len <= 1000 = 3
-  | len <= 10000 = 4
-  | len <= 100000 = 5
-  | len <= 1000000 = 6
-  | otherwise = 0
+lenToWidth len = numDigits (len - 1)
+
+-- | Number of base 10 digits. @n@ must be non-negative.
+numDigits :: Int -> Int
+numDigits n
+  | n < 10 = 1
+  | otherwise = 1 + numDigits (n `quot` 10)
